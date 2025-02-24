@@ -1,6 +1,6 @@
 FROM node:22-alpine AS base
 
-# Change this file
+# Change this file here to use the latest version of the node image
 
 RUN corepack enable
 
