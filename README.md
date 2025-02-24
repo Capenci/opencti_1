@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://opencti.io"><img src="./.github/img/logo_opencti.png" alt="OpenCTI">Test</a>
+  <a href="https://opencti.io"><img src="./.github/img/logo_opencti.png" alt="OpenCTI_1"></a>
 </h1>
 <p align="center">
   <a href="https://opencti.io" alt="Website"><img src="https://img.shields.io/badge/website-opencti.io-blue.svg" /></a>
