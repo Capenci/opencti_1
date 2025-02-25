@@ -135,19 +135,19 @@ def load_config():
         
 
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    if len(args) > 0:
-        GITHUB_TOKEN = args[0]
-    else:
-        GITHUB_TOKEN = input("Enter your GitHub token: ")
-        exit(1)
-    load_config()
-    # Schedule
-    schedule.every(1).minutes.do(check_new_commit)
+    # args = sys.argv[1:]
+    # if len(args) > 0:
+    #     GITHUB_TOKEN = args[0]
+    # else:
+    #     GITHUB_TOKEN = input("Enter your GitHub token: ")
+    #     exit(1)
+    # load_config()
+    # # Schedule
+    # schedule.every(1).minutes.do(check_new_commit)
 
-    print("Monitoring for new commits...")
+    # print("Monitoring for new commits...")
 
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
-    # push_to_destination()
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
+    push_to_destination()
