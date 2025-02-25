@@ -1,0 +1,16 @@
+{
+    "opencti_main_repo": {
+        "owner": "Capenci",
+        "repo": "opencti_1",
+        "branch": "main"
+    },
+    "dir": {
+        "repo_dir": "/media/capenci/HDD1/code/opencti_1",
+        "target_dir": "/media/capenci/HDD1/code/opencti_2"
+    },
+    "whitelist": [
+        ".github",
+        ".git"
+    ],
+    "last_commit": "a9c672f0f068fd8ca0005cf8dd1ed10e57c133a9"
+}
