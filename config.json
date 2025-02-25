@@ -9,8 +9,8 @@
         "target_dir": "/media/capenci/HDD1/code/opencti_2"
     },
     "whitelist": [
-        ".github",
-        ".git"
+        ".git",
+        ".github"
     ],
-    "last_commit": "a9c672f0f068fd8ca0005cf8dd1ed10e57c133a9"
+    "last_commit": "66b809833659182139df89b0f3d460e0fc9f4af6"
 }
