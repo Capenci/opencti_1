@@ -27,6 +27,7 @@ RUN set -ex; \
     && npm install -g node-gyp \
     && yarn install
 COPY opencti-graphql /opt/opencti-build/opencti-graphql
+RUN yarn install --frozen-lockfile && yarn cache clean
 RUN yarn build:prod
 
 
