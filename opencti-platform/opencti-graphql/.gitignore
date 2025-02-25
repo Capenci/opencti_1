@@ -19,13 +19,11 @@ config/sync.json
 config/prod-*.json
 coverage
 test-results
-logs
-telemetry
+logs 
 .support
 yarn-error.log
 graphql.schema.json
 __pycache__
-telemetry
 
 # Yarn
 .yarn/*
