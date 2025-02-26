@@ -20,6 +20,7 @@ WHITELIST = {}
 last_commit = None
 
 GITHUB_TOKEN = ""
+GITLAB_CONFIG = {}
 
 def check_new_commit():
     global last_commit
@@ -105,12 +106,17 @@ def is_whitelisted(relative_path):
 def push_to_destination():
     """Commit and push changes to the destination repository"""
     try:
+        gitlab_repo_url = GITLAB_CONFIG['repo_url']
+        gitlab_repo_token = GITLAB_CONFIG['repo_token']
+        gitlab_repo_branch = GITLAB_CONFIG['repo_branch']
+        auth_git_url = gitlab_repo_url.replace("https://", f"https://{gitlab_username}:{gitlab_token}@")
         repo = git.Repo(TARGET_DIR)
         repo.git.add("--all")
-
+        
         if repo.is_dirty():
             repo.index.commit("Automated update from source repo")
             origin = repo.remotes.origin
+            origin.set_url(auth_git_url)
             origin.push()
             print("Changes pushed to destination repository.")
         else:
@@ -121,7 +127,7 @@ def push_to_destination():
 
 
 def load_config():
-    global OWNER, REPO, BRANCH, REPO_DIR, TARGET_DIR, WHITELIST, GITHUB_API_URL, last_commit
+    global OWNER, REPO, BRANCH, REPO_DIR, TARGET_DIR, WHITELIST, GITHUB_API_URL, last_commit, GITLAB_CONFIG
     with open('config.json') as f:
         config = json.load(f)
         OWNER = config['opencti_main_repo']['owner']
@@ -132,7 +138,7 @@ def load_config():
         WHITELIST = set(config['whitelist'])
         GITHUB_API_URL = f"https://api.github.com/repos/{OWNER}/{REPO}/commits/{BRANCH}"
         last_commit = config['last_commit']
-        
+        GITLAB_CONFIG = config['gitlab_config'] 
 
 if __name__ == "__main__":
     args = sys.argv[1:]
