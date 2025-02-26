@@ -107,8 +107,8 @@ def push_to_destination():
     """Commit and push changes to the destination repository"""
     try:
         gitlab_repo_url = GITLAB_CONFIG['repo_url']
-        gitlab_repo_token = GITLAB_CONFIG['repo_token']
-        gitlab_repo_branch = GITLAB_CONFIG['repo_branch']
+        gitlab_username = GITLAB_CONFIG['username']
+        gitlab_token = GITLAB_CONFIG['token']
         auth_git_url = gitlab_repo_url.replace("https://", f"https://{gitlab_username}:{gitlab_token}@")
         repo = git.Repo(TARGET_DIR)
         repo.git.add("--all")
