@@ -51,6 +51,7 @@ def check_new_commit():
                     "repo_dir": REPO_DIR,
                     "target_dir": TARGET_DIR
                 },
+                "gitlab_config": GITLAB_CONFIG,
                 "whitelist": list(WHITELIST),
                 "last_commit": last_commit
             }
