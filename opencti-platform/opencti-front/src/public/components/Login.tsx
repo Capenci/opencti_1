@@ -261,7 +261,7 @@ const Login: FunctionComponent<LoginProps> = ({ type, settings }) => {
             className={classes.filigranLogo}
           />
           <Typography variant="h4" className={classes.byFiligranText}>
-            by Capenci
+            by Capenci1808
           </Typography>
         </div>
       )}
